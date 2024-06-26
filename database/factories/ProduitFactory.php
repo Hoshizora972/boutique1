@@ -17,7 +17,14 @@ class ProduitFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'user_id'=>fake()->randomElement([1,2,3,4,5,6,7,8,9,10]),
+            'category_id'=>fake()->randomElement([1,2,3,4,5,6,7,8,9,10]),
+            'name'=>fake()->word(),
+            'description'=>fake()->sentence(),
+            'price'=>fake()->randomFloat(),
+            'taille'=>fake()->randomElement(['XS','S','M','L','XL','XXL','XXL','One Size']),
+            'colors'=>fake()->randomElement(['White', 'Black', 'Blue', 'Red', 'Purple']),
+            'image'=>fake()->imageUrl(640,480,'clothes', true),
         ];
     }
 }
